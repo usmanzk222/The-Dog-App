@@ -1,0 +1,138 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 33
+    namespace "com.usman.mvvmsample"
+    defaultConfig {
+        applicationId "com.usman.mvvmsample"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+        freeCompilerArgs = ['-Xjvm-default=all-compatibility']
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.6'
+    }
+
+    buildFeatures {
+        compose true
+    }
+    namespace 'com.usman.mvvmsample'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.core:core-ktx:$ktx"
+    
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+    // Annotation processor
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    //paging
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+    implementation "androidx.paging:paging-compose:$paging_compose_version"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
+    // Room Database
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-paging:$room_version"
+
+    //Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+
+    def composeBom = platform('androidx.compose:compose-bom:2023.04.01')
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
+
+    implementation "androidx.compose.runtime:runtime"
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.foundation:foundation"
+    implementation "androidx.compose.foundation:foundation-layout"
+    implementation "androidx.compose.material:material"
+    implementation 'androidx.compose.material3:material3'
+    implementation "androidx.compose.runtime:runtime-livedata"
+    implementation "androidx.compose.ui:ui-tooling"
+    implementation "com.google.accompanist:accompanist-themeadapter-material:0.30.1"
+
+    //Image Loading
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
+    implementation "androidx.window:window:1.1.0"
+    implementation "androidx.compose.material3:material3-window-size-class:1.1.1"
+    implementation "androidx.navigation:navigation-compose:$compose_navigation_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-compose:2.6.1"
+
+    //Testing
+    testImplementation 'io.mockk:mockk:1.12.0'
+    testImplementation "app.cash.turbine:turbine:$turbine"
+
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_test"
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:coroutines")
+
+    // optional - Test helpers for LiveData
+    testImplementation "androidx.arch.core:core-testing:$arch_version"
+
+    testImplementation "androidx.paging:paging-common-ktx:$paging_version"
+    testImplementation "androidx.paging:paging-testing:$paging_version"
+    androidTestImplementation "androidx.paging:paging-testing:$paging_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines"
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+
+    androidTestImplementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.13.2'
+
+
+    androidTestImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_test"
+
+    // Core library
+    androidTestImplementation 'androidx.test:core:1.4.0'
+
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+
+    // Assertions
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.ext:truth:1.5.0'
+    androidTestImplementation 'com.google.truth:truth:1.1.3'
+
+}

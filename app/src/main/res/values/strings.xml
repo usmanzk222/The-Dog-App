@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Dography</string>
+    <string name="lorem_ipsum">Lorem Ipsum</string>
+    <string name="title_main_fragment">Dog Breeds</string>
+    <string name="retry">Retry</string>
+    <string name="back">Back</string>
+    <string name="back_button">Back Button</string>
+    <string name="title_detail_fragment">Detail</string>
+    <string name="favourite">Favourite</string>
+    <string name="home">Home</string>
+    <string name="loading">Loading</string>
+    <string name="dog_image">Dog Image</string>
+    <string name="group">Group</string>
+    <string name="origin">Origin</string>
+    <string name="life_span">Life Span</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="temperament">Temperament</string>
+    <string name="description">Description</string>
+    <string name="error_message">Something went wrong</string>
+</resources>

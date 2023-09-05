@@ -1,0 +1,47 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext {
+        ktx = '1.10.1'
+        lifecycle_version = '2.4.1'
+        arch_version = '2.2.0'
+        retrofit = '2.9.0'
+        support_version = '1.6.1'
+        recyclerview = '1.2.1'
+        material = '1.9.0'
+        constraint = '2.1.1'
+        dagger = '2.40.4'
+        dagger_android = '2.40.4'
+        rxjavaversion = '2.2.4'
+        rxandroidversion = '2.1.0'
+        rxadapterversion = '2.5.0'
+        room_version = '2.5.2'
+        coroutines = '1.7.3'
+        picasso = '2.71828'
+        nav_version = '2.5.3'
+        compose_navigation_version = '2.6.0'
+        hilt_version = '2.46.1'
+        paging_version = '3.2.0'
+        paging_compose_version = '3.2.0'
+        turbine = '1.0.0'
+        kotlin_test = '1.8.22'
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
